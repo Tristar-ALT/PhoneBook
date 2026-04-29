@@ -8,12 +8,20 @@ public class Book {
     }
 
     public Book() {
-        book = new String[10][2];
+        book = new String[0][2];
     }
 
     public void addContact(String name, String number) {
         String[][] temp = Arrays.copyOf(book, book.length+1);
         temp[book.length] = new String[]{name, number};
         book = temp;
+    }
+
+    public String viewContacts() {
+        String complete = "Contacts:\n";
+        for (String[] i : book) {
+            complete = complete + "\nName: " + i[0] + "\nNumber: " + i[1];
+        }
+        return complete;
     }
 }

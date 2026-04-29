@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Book book = new Book();
 
@@ -24,12 +24,12 @@ public class Main {
                     System.out.print("Enter phone number: ");
                     String phone = in.nextLine();
 
-                    
+                    book.addContact(name, phone);
 
                     break;
 
                 case 2:
-                    // book.viewContacts();
+                    System.out.println(book.viewContacts());
                     break;
 
                 case 3:
