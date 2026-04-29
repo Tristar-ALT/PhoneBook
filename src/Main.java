@@ -1,25 +1,49 @@
 import java.util.Scanner;
-void main() {
-    int answer = 0;
-    while (answer != 3) {
+
+public class Main {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Welcome to your phonebook!\nType '1' to add a new contact.\nType '2' to view your contacts\nType '3' to exit.");
-        answer = in.nextInt();
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-        switch (answer) {
-            case (1): {
-                /* Adding To Be Implemented */
+        Book book = new Book();
+
+        int answer = 0;
+
+        while (answer != 3) {
+            System.out.println("Welcome to your phonebook!");
+            System.out.println("1. Add Contact");
+            System.out.println("2. View Contacts");
+            System.out.println("3. Exit");
+
+            answer = in.nextInt();
+            in.nextLine(); // clear buffer
+
+            switch (answer) {
+                case 1:
+                    System.out.print("Enter name: ");
+                    String name = in.nextLine();
+
+                    System.out.print("Enter phone number: ");
+                    String phone = in.nextLine();
+
+                    
+
+                    break;
+
+                case 2:
+                    // book.viewContacts();
+                    break;
+
+                case 3:
+                    System.out.println("Exiting...");
+                    // book.saveToFile(); (later)
+                    break;
+
+                default:
+                    System.out.println("Invalid input. Try again.");
             }
-            case (2): {
-                /* Viewing to be implemented */
-            }
-            case (3): {
-                /* Exiting to be implemented */
-            }
-            default: {
-                /* Rewind to be implemented */
-            }
+
+            System.out.println(); // spacing
         }
+
+        in.close();
     }
 }
